@@ -62,9 +62,14 @@ class Game{
                        textSize(20)
                        text(allPlayers[plr].name,x-25,y+25)
 
-                         
-                     }
                     
+
+                     }
+                     fill("white")
+                     textSize(30)
+                     text(allPlayers.player1.name+":"+allPlayers.player1.score,100,50)
+                     text(allPlayers.player2.name+":"+allPlayers.player2.score,100,100)
+
                       
                  
                  }
@@ -105,6 +110,8 @@ class Game{
                     for (var i = 0; i < fruitGroup.length; i++) {
                         if (fruitGroup.get(i).isTouching(players)) {
                             fruitGroup.get(i).destroy();
+                            player.score=player.score+1
+                            player.update();
                          
                             
                         }
